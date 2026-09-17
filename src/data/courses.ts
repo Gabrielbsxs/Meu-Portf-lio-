@@ -14,6 +14,12 @@
  */
 
 import courseFallback from "@/assets/hero.jpg";
+import powerBiAsset from "@/assets/curso-power-bi.png.asset.json";
+import firebaseGeminiAsset from "@/assets/curso-firebase-gemini.png.asset.json";
+import awsAsset from "@/assets/curso-aws.png.asset.json";
+import pythonAsset from "@/assets/curso-python.png.asset.json";
+import cienciaDadosAsset from "@/assets/curso-ciencia-dados.png.asset.json";
+import ai900Asset from "@/assets/curso-ai-900.png.asset.json";
 
 /** Converte um ID de arquivo do Google Drive em URL de imagem exibível. */
 export function driveImage(fileId: string) {
