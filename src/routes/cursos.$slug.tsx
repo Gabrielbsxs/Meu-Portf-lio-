@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { getCourse } from "@/data/courses";
 import { profile } from "@/data/profile";
+import { StarRating } from "@/components/star-rating";
 
 export const Route = createFileRoute("/cursos/$slug")({
   loader: ({ params }) => {
@@ -22,6 +23,8 @@ export const Route = createFileRoute("/cursos/$slug")({
         { name: "description", content: loaderData.course.shortDescription },
         { property: "og:title", content: t },
         { property: "og:description", content: loaderData.course.shortDescription },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
     };
   },
@@ -59,6 +62,7 @@ function CourseDetail() {
               {course.category}
             </span>
             <h1 className="mt-4 text-4xl font-semibold text-foreground sm:text-5xl">{course.title}</h1>
+            <StarRating rating={course.rating} className="mt-4" />
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{course.fullDescription}</p>
 
             <dl className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -68,12 +72,16 @@ function CourseDetail() {
               <Info icon={<Target className="size-4" />} label="Indicado para" value={course.audience} />
             </dl>
 
-            <a
-              href={course.ctaHref}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground shadow-lift transition-transform hover:-translate-y-0.5"
-            >
-              {course.ctaLabel}
-            </a>
+            {course.ctaHref && (
+              <a
+                href={course.ctaHref}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground shadow-lift transition-transform hover:-translate-y-0.5"
+              >
+                {course.ctaLabel}
+              </a>
+            )}
           </div>
         </section>
 
@@ -83,18 +91,32 @@ function CourseDetail() {
           <Block title="Para quem é" items={course.forWho} />
         </section>
 
+        {course.details && (
+          <section className="mx-auto max-w-6xl px-5 py-8" aria-labelledby="detalhes-formacao">
+            <h2 id="detalhes-formacao" className="text-2xl font-semibold text-foreground">Detalhes da formação</h2>
+            <dl className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {course.details.map((detail) => (
+                <Info key={detail.label} icon={<Check className="size-4" />} label={detail.label} value={detail.value} />
+              ))}
+            </dl>
+          </section>
+        )}
+
         <section className="mx-auto max-w-6xl px-5 py-10">
           <div className="surface-card flex flex-col items-center gap-5 p-10 text-center">
-            <h2 className="text-3xl font-semibold text-foreground">Pronto para começar?</h2>
+            <h2 className="text-3xl font-semibold text-foreground">Conheça esta formação</h2>
             <p className="max-w-xl text-muted-foreground">
               Fale comigo e descubra se este curso é o passo certo para o seu momento.
             </p>
-            <a
-              href={course.ctaHref}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
-            >
-              {course.ctaLabel}
-            </a>
+            {course.ctaHref ? (
+              <a href={course.ctaHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
+                {course.ctaLabel}
+              </a>
+            ) : (
+              <Link to="/cursos" className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
+                Ver outros cursos
+              </Link>
+            )}
           </div>
         </section>
       </main>

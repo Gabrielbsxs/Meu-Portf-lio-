@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight, Clock, Signal, Target, Users } from "lucide-react";
 import type { Course } from "@/data/courses";
+import { StarRating } from "@/components/star-rating";
 
 export function CourseCarousel({ courses }: { courses: Course[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
@@ -41,6 +42,7 @@ export function CourseCarousel({ courses }: { courses: Course[] }) {
                     {course.category}
                   </span>
                   <h3 className="text-3xl font-semibold text-foreground sm:text-4xl">{course.title}</h3>
+                  <StarRating rating={course.rating} />
                   <p className="text-base leading-relaxed text-muted-foreground">
                     {course.shortDescription}
                   </p>
@@ -52,14 +54,26 @@ export function CourseCarousel({ courses }: { courses: Course[] }) {
                     <Info icon={<Target className="size-4" />} label="Indicado para" value={course.audience} />
                   </dl>
 
-                  <Link
-                    to="/cursos/$slug"
-                    params={{ slug: course.slug }}
-                    className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
-                  >
-                    Ver detalhes
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </Link>
+                  {course.ctaHref ? (
+                    <a
+                      href={course.ctaHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+                    >
+                      {course.ctaLabel}
+                      <ArrowRight className="size-4" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <Link
+                      to="/cursos/$slug"
+                      params={{ slug: course.slug }}
+                      className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+                    >
+                      {course.ctaLabel}
+                      <ArrowRight className="size-4" aria-hidden="true" />
+                    </Link>
+                  )}
                 </div>
               </article>
             </div>

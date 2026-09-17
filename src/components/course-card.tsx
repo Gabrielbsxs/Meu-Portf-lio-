@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Clock, Signal, Users } from "lucide-react";
 import type { Course } from "@/data/courses";
+import { StarRating } from "@/components/star-rating";
 
 export function CourseCard({ course }: { course: Course }) {
   return (
@@ -18,6 +19,7 @@ export function CourseCard({ course }: { course: Course }) {
           {course.category}
         </span>
         <h3 className="mt-3 text-xl font-semibold text-foreground">{course.title}</h3>
+        <StarRating rating={course.rating} className="mt-3" />
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
           {course.shortDescription}
         </p>
@@ -34,14 +36,26 @@ export function CourseCard({ course }: { course: Course }) {
           </li>
         </ul>
 
-        <Link
-          to="/cursos/$slug"
-          params={{ slug: course.slug }}
-          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
-        >
-          Ver detalhes
-          <ArrowRight className="size-4" aria-hidden="true" />
-        </Link>
+        {course.ctaHref ? (
+          <a
+            href={course.ctaHref}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3"
+          >
+            {course.ctaLabel}
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </a>
+        ) : (
+          <Link
+            to="/cursos/$slug"
+            params={{ slug: course.slug }}
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3"
+          >
+            {course.ctaLabel}
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        )}
       </div>
     </article>
   );
