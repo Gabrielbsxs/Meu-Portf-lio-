@@ -53,7 +53,7 @@ export const courses: Course[] = [
     image: courseFallback,
     imageAlt: "Foto do profissional associada à formação em Análise e Desenvolvimento de Sistemas",
     level: "Graduação tecnológica",
-    duration: "28 disciplinas",
+    duration: "60 horas",
     format: "Presencial",
     audience: "Desenvolvimento de sistemas",
     category: "Formação superior",
@@ -133,13 +133,13 @@ export const courses: Course[] = [
   },
   {
     slug: "firebase-gemini",
-    title: "Firebase + Gemini — Criação de Aplicativos",
+    title: "Firebase + Gemini — Criação de Aplicativos com Google Firebase e Gemini",
     shortDescription:
       "Criação e publicação de aplicativos com Firebase, Firestore, autenticação e apoio do Gemini.",
     fullDescription:
       "Desenvolvimento de protótipos de aplicativos integrados ao Firebase, com persistência no Firestore, autenticação e publicação no Hosting. O Gemini apoia o desenvolvimento de código, com entregas versionadas em Git e aplicação de segurança, privacidade, LGPD e IA responsável.",
     image: courseFallback,
-    imageAlt: "Foto do profissional associada ao curso Firebase e Gemini",
+    imageAlt: "Foto do profissional associada ao curso de aplicativos com Google Firebase e Gemini",
     level: "Formação profissional",
     duration: "32 horas",
     format: "Certificação SENAI",
