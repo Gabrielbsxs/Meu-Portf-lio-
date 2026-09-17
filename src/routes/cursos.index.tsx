@@ -8,7 +8,7 @@ import { profile } from "@/data/profile";
 
 const title = `Todos os cursos — ${profile.name}`;
 const description =
-  "Veja todos os cursos disponíveis: comunicação, produtividade, escrita e liderança. Filtre por área e encontre o ideal para você.";
+  "Conheça cursos e certificações em programação, dados, cloud e inteligência artificial.";
 
 export const Route = createFileRoute("/cursos/")({
   head: () => ({
@@ -17,6 +17,8 @@ export const Route = createFileRoute("/cursos/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Cursos,
@@ -37,8 +39,8 @@ function Cursos() {
             Encontre o curso certo para o seu momento
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            Cada programa combina método, prática e acompanhamento próximo. Filtre por área para
-            comparar as opções.
+            Explore as formações concluídas e consulte os certificados de cada curso. Filtre por
+            área para comparar as opções.
           </p>
         </header>
 

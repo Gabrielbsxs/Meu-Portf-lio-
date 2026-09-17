@@ -6,9 +6,9 @@ import { CourseCarousel } from "@/components/course-carousel";
 import { featuredCourses } from "@/data/courses";
 import { profile } from "@/data/profile";
 
-const title = `${profile.name} — Cursos de comunicação, produtividade e liderança`;
+const title = `${profile.name} — Cursos e certificações em tecnologia`;
 const description =
-  "Cursos práticos e humanos para você se comunicar melhor, organizar sua rotina e evoluir com propósito. Conheça os cursos e comece hoje.";
+  "Conheça formações e certificações em programação, dados, cloud e inteligência artificial.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,6 +17,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -83,7 +85,7 @@ function Home() {
               Escolha o próximo passo da sua evolução
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Programas construídos para caber na sua rotina, com prática desde a primeira aula.
+              Formações em programação, dados, computação em nuvem e inteligência artificial.
             </p>
           </div>
 
