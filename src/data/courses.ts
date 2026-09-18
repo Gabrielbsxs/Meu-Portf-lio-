@@ -53,9 +53,9 @@ export const courses: Course[] = [
     slug: "analise-e-desenvolvimento-de-sistemas",
     title: "Superior de Tecnologia em Análise e Desenvolvimento de Sistemas",
     shortDescription:
-      "Formação superior em tecnologia com 28 disciplinas, realizada na unidade SENAI de Lorena/SP.",
+      "Formação superior (EAD) em tecnologia com 28 disciplinas, realizada pela Anhanguera.",
     fullDescription:
-      "Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas, composto por 28 disciplinas na unidade de Lorena/SP. Entre os resultados acadêmicos, a disciplina Projeto de Software foi concluída no 1º semestre de 2023, com carga horária de 60 horas e média final 10.",
+      "Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas, na modalidade EAD, composto por 28 disciplinas pela Anhanguera. Entre os resultados acadêmicos, a disciplina Projeto de Software foi concluída no 1º semestre de 2023, com carga horária de 60 horas e média final 10.",
     image: courseFallback,
     imageAlt: "Foto do profissional associada à formação em Análise e Desenvolvimento de Sistemas",
     level: "Graduação tecnológica",
@@ -70,12 +70,12 @@ export const courses: Course[] = [
       "Experiência acadêmica em projeto de software",
     ],
     syllabus: ["Projeto de Software — 1º semestre de 2023", "Carga horária da disciplina: 60h", "Média final: 10"],
-    forWho: ["Formação realizada na unidade de Lorena/SP", "Curso composto por 28 disciplinas"],
+    forWho: ["Formação realizada na modalidade EAD pela Anhanguera", "Curso composto por 28 disciplinas"],
     ctaLabel: "Ver formação",
     ctaHref: "",
     rating: 5,
     details: [
-      { label: "Unidade", value: "Lorena/SP" },
+      { label: "Instituição", value: "Anhanguera (EAD)" },
       { label: "Disciplina em destaque", value: "Projeto de Software" },
       { label: "Semestre", value: "1º semestre/2023" },
       { label: "Média final", value: "10" },
