@@ -61,6 +61,19 @@ function Sobre() {
               </ul>
             </section>
 
+            <section aria-labelledby="skills" className="mt-10">
+              <h2 id="skills" className="text-xl font-semibold text-foreground">
+                Tecnologias que utilizo
+              </h2>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {profile.skills.map((s) => (
+                  <li key={s} className="rounded-xl border border-border bg-card px-4 py-2 text-sm font-medium text-foreground">
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
             <section aria-labelledby="especialidades" className="mt-10">
               <h2 id="especialidades" className="text-xl font-semibold text-foreground">
                 Especialidades
@@ -87,6 +100,21 @@ function Sobre() {
                   </li>
                 ))}
               </ol>
+            </section>
+
+            <section aria-labelledby="objetivo" className="mt-10 surface-card p-6">
+              <h2 id="objetivo" className="text-xl font-semibold text-foreground">
+                O que busco
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">{profile.objective}</p>
+              <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                {profile.interests.map((i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-foreground">
+                    <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
+                    {i}
+                  </li>
+                ))}
+              </ul>
             </section>
 
             <div className="mt-10 flex flex-wrap gap-3">
