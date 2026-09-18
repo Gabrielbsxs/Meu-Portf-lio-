@@ -1,19 +1,19 @@
 /**
- * Dados pessoais de Gabriel Silva.
+ * Dados pessoais de Gabriel Bueno da Silva.
  */
 import profileAsset from "@/assets/profile.jpeg.asset.json";
 
 export const profile = {
-  name: "Gabriel Silva",
+  name: "Gabriel Bueno da Silva",
   role: "Profissional de tecnologia · Análise e Desenvolvimento de Sistemas",
   tagline:
     "Transformo problemas do dia a dia em soluções com tecnologia — entre desenvolvimento, dados, cloud e segurança.",
   intro:
-    "Sou profissional formado em Análise e Desenvolvimento de Sistemas (ADS), com interesse em tecnologia, desenvolvimento de software, dados, computação em nuvem e Segurança da Informação. Minha trajetória na área de tecnologia é marcada principalmente pela curiosidade e pela prática: gosto de entender como as coisas funcionam e transformar problemas do dia a dia em soluções utilizando tecnologia.",
+    "Sou profissional formado em Análise e Desenvolvimento de Sistemas (ADS) pela Anhanguera, com interesse em tecnologia, desenvolvimento de software, dados, computação em nuvem e Segurança da Informação. Minha trajetória na área de tecnologia é marcada principalmente pela curiosidade e pela prática: gosto de entender como as coisas funcionam e transformar problemas do dia a dia em soluções utilizando tecnologia.",
   photo: profileAsset.url,
-  photoAlt: "Foto de Gabriel Silva",
+  photoAlt: "Foto de Gabriel Bueno da Silva",
   bio: [
-    "Sou profissional formado em Análise e Desenvolvimento de Sistemas (ADS), com interesse em tecnologia, desenvolvimento de software, dados, computação em nuvem e Segurança da Informação. Minha trajetória na área de tecnologia é marcada principalmente pela curiosidade e pela prática. Gosto de entender como as coisas funcionam e transformar problemas do dia a dia em soluções utilizando tecnologia.",
+    "Sou profissional formado em Análise e Desenvolvimento de Sistemas (ADS) pela Anhanguera, com interesse em tecnologia, desenvolvimento de software, dados, computação em nuvem e Segurança da Informação. Minha trajetória na área de tecnologia é marcada principalmente pela curiosidade e pela prática. Gosto de entender como as coisas funcionam e transformar problemas do dia a dia em soluções utilizando tecnologia.",
     "Tenho conhecimentos em Python, HTML, CSS, JavaScript, SQL e Git/GitHub, além de experiência com bancos de dados como MySQL e SQLite. Também desenvolvi aplicações utilizando Python com interfaces gráficas, APIs e integração com inteligência artificial.",
     "Na área de Dados e Business Intelligence, possuo experiência com Power BI, criação de dashboards, organização de informações e análise de indicadores. Já desenvolvi projetos envolvendo dados de funcionários, vendas, produtos, entregas e controle financeiro.",
     "Também venho estudando Cloud Computing, com experiências práticas envolvendo AWS, Google Cloud, máquinas virtuais, Linux, Windows Server e serviços em nuvem. Paralelamente, tenho aprofundado meus conhecimentos em Segurança da Informação, especialmente conceitos relacionados a redes, Linux, análise de eventos, SIEM, Wazuh, investigação de alertas e rotina de um SOC.",
@@ -61,9 +61,9 @@ export const profile = {
   experience: [
     {
       period: "Formação",
-      title: "Análise e Desenvolvimento de Sistemas (ADS)",
+      title: "Análise e Desenvolvimento de Sistemas (ADS) — Anhanguera",
       description:
-        "Graduação tecnológica com 28 disciplinas, concluída na unidade SENAI de Lorena/SP. Disciplina Projeto de Software concluída com média final 10.",
+        "Graduação tecnológica (EAD) com 28 disciplinas, concluída pela Anhanguera. Disciplina Projeto de Software concluída com média final 10.",
     },
     {
       period: "Desenvolvimento",
