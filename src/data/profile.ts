@@ -84,11 +84,10 @@ export const profile = {
         "Experiência prática com máquinas virtuais, Linux, Windows Server e serviços em nuvem. Estudos em Segurança da Informação: redes, SIEM, Wazuh, análise de eventos e investigação de alertas.",
     },
   ],
-  email: "seu@email.com",
+  email: "gabrielbsilva.ads@gmail.com",
   phone: "+55 (00) 00000-0000",
   social: [
-    { label: "Instagram", href: "https://instagram.com/seuperfil" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/seuperfil" },
-    { label: "GitHub", href: "https://github.com/seuperfil" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/gabriel-silva-a5107a287/" },
+    { label: "GitHub", href: "https://github.com/Gabrielbsxs" },
   ],
 };
