@@ -63,8 +63,8 @@ export const courses: Course[] = [
       "Formação superior (EAD) em tecnologia com 28 disciplinas, realizada pela Anhanguera.",
     fullDescription:
       "Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas, na modalidade EAD, composto por 28 disciplinas pela Anhanguera. Entre os resultados acadêmicos, a disciplina Projeto de Software foi concluída no 1º semestre de 2023, com carga horária de 60 horas e média final 10.",
-    image: courseFallback,
-    imageAlt: "Foto do profissional associada à formação em Análise e Desenvolvimento de Sistemas",
+    image: anhangueraLogoAsset.url,
+    imageAlt: "Logo da Anhanguera — instituição da formação em Análise e Desenvolvimento de Sistemas",
     level: "Graduação tecnológica",
     duration: "60 horas",
     format: "EAD",
