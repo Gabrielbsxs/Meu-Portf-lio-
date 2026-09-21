@@ -13,7 +13,6 @@
  * ======================================================================
  */
 
-import courseFallback from "@/assets/hero.jpg";
 import powerBiAsset from "@/assets/curso-power-bi.png.asset.json";
 import firebaseGeminiAsset from "@/assets/curso-firebase-gemini.png.asset.json";
 import awsAsset from "@/assets/curso-aws.png.asset.json";
