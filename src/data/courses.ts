@@ -20,6 +20,13 @@ import awsAsset from "@/assets/curso-aws.png.asset.json";
 import pythonAsset from "@/assets/curso-python.png.asset.json";
 import cienciaDadosAsset from "@/assets/curso-ciencia-dados.png.asset.json";
 import ai900Asset from "@/assets/curso-ai-900.png.asset.json";
+import mysqlAsset from "@/assets/curso-mysql.png.asset.json";
+import gitGithubAsset from "@/assets/curso-git-github.png.asset.json";
+import segurancaInfoAsset from "@/assets/curso-seguranca-info.png.asset.json";
+import basesNumericasAsset from "@/assets/curso-bases-numericas.png.asset.json";
+import iaCursoemvideoAsset from "@/assets/curso-ia-cursoemvideo.png.asset.json";
+import html5Asset from "@/assets/curso-html5.png.asset.json";
+import anhangueraLogoAsset from "@/assets/logo-anhanguera.png.asset.json";
 
 /** Converte um ID de arquivo do Google Drive em URL de imagem exibível. */
 export function driveImage(fileId: string) {
