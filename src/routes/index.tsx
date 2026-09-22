@@ -41,7 +41,7 @@ function Home() {
               </p>
               <h1 className="mt-6 text-4xl font-semibold leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
                 {profile.name}
-                <span className="mt-3 block text-gradient-warm">{profile.tagline}</span>
+                <span className="mt-3 block text-muted-foreground">{profile.tagline}</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
                 {profile.intro}
