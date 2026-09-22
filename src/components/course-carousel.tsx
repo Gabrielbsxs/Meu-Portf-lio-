@@ -24,7 +24,7 @@ export function CourseCarousel({ courses }: { courses: Course[] }) {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden rounded-3xl" ref={emblaRef}>
+      <div className="overflow-hidden rounded-2xl sm:rounded-3xl" ref={emblaRef}>
         <div className="flex touch-pan-y">
           {courses.map((course, i) => (
             <div key={course.slug} className="min-w-0 flex-[0_0_100%] px-1" aria-hidden={selected !== i}>
@@ -35,13 +35,13 @@ export function CourseCarousel({ courses }: { courses: Course[] }) {
                   loading={i === 0 ? "eager" : "lazy"}
                   width={1280}
                   height={800}
-                  className="h-full min-h-64 w-full object-cover transition-opacity duration-500"
+                  className="aspect-[16/10] w-full bg-secondary object-contain p-2 transition-opacity duration-500 sm:p-3 lg:aspect-auto lg:h-full lg:min-h-64"
                 />
-                <div className="flex flex-col justify-center gap-5 p-8 sm:p-10">
+                <div className="flex min-w-0 flex-col justify-center gap-4 p-5 sm:gap-5 sm:p-10">
                   <span className="w-fit rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-primary">
                     {course.category}
                   </span>
-                  <h3 className="text-3xl font-semibold text-foreground sm:text-4xl">{course.title}</h3>
+                  <h3 className="break-words text-2xl font-semibold leading-snug text-foreground sm:text-4xl">{course.title}</h3>
                   <StarRating rating={course.rating} />
                   <p className="text-base leading-relaxed text-muted-foreground">
                     {course.shortDescription}
@@ -59,7 +59,7 @@ export function CourseCarousel({ courses }: { courses: Course[] }) {
                       href={course.ctaHref}
                       target="_blank"
                       rel="noreferrer"
-                      className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+                      className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5 sm:w-fit"
                     >
                       {course.ctaLabel}
                       <ArrowRight className="size-4" aria-hidden="true" />
@@ -68,7 +68,7 @@ export function CourseCarousel({ courses }: { courses: Course[] }) {
                     <Link
                       to="/cursos/$slug"
                       params={{ slug: course.slug }}
-                      className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+                      className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5 sm:w-fit"
                     >
                       {course.ctaLabel}
                       <ArrowRight className="size-4" aria-hidden="true" />

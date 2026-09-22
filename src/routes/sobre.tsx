@@ -27,20 +27,20 @@ function Sobre() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
 
-      <main className="mx-auto max-w-6xl px-5 py-14 lg:py-20">
-        <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-14 lg:py-20">
+        <div className="grid items-start gap-9 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
           <img
             src={profile.photo}
             alt={profile.photoAlt}
             width={1280}
             height={1280}
-            className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-lift"
+            className="mx-auto aspect-[4/5] max-h-[38rem] w-full max-w-lg rounded-2xl object-cover shadow-lift sm:rounded-[2rem]"
           />
 
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent">{profile.role}</p>
-            <h1 className="mt-3 text-4xl font-semibold text-foreground sm:text-5xl">{profile.name}</h1>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{profile.tagline}</p>
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent sm:text-sm">{profile.role}</p>
+            <h1 className="mt-3 break-words text-3xl font-semibold leading-tight text-foreground sm:text-5xl">{profile.name}</h1>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">{profile.tagline}</p>
 
             {profile.bio.map((p) => (
               <p key={p} className="mt-4 text-base leading-relaxed text-muted-foreground">
@@ -102,7 +102,7 @@ function Sobre() {
               </ol>
             </section>
 
-            <section aria-labelledby="objetivo" className="mt-10 surface-card p-6">
+            <section aria-labelledby="objetivo" className="surface-card mt-10 p-5 sm:p-6">
               <h2 id="objetivo" className="text-xl font-semibold text-foreground">
                 O que busco
               </h2>
@@ -117,17 +117,17 @@ function Sobre() {
               </ul>
             </section>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 grid gap-3 sm:flex sm:flex-wrap">
               <Link
                 to="/cursos"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-center text-sm font-semibold text-accent-foreground shadow-soft transition-transform hover:-translate-y-0.5"
               >
                 Ver todos os cursos
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-card px-7 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-secondary"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/25 bg-card px-7 py-3.5 text-center text-sm font-semibold text-primary transition-colors hover:bg-secondary"
               >
                 Falar comigo
               </a>

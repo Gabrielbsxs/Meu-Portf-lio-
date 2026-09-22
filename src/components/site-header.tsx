@@ -14,8 +14,8 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
-        <Link to="/" className="font-display text-lg font-semibold tracking-tight text-primary">
+      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-5 sm:py-4 md:flex md:justify-between">
+        <Link to="/" className="min-w-0 truncate font-display text-base font-semibold text-primary sm:text-lg">
           {profile.name}
         </Link>
 
@@ -44,7 +44,7 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="rounded-full border border-border p-2 text-primary md:hidden"
+          className="shrink-0 rounded-full border border-border p-2 text-primary md:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -52,7 +52,7 @@ export function SiteHeader() {
 
       {open && (
         <nav aria-label="Navegação móvel" className="border-t border-border/60 bg-background md:hidden">
-          <ul className="mx-auto max-w-6xl px-5 py-3">
+          <ul className="mx-auto max-w-6xl px-4 py-3 sm:px-5">
             {links.map((l) => (
               <li key={l.to}>
                 <Link

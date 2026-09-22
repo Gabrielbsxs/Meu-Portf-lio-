@@ -12,13 +12,13 @@ export function CourseCard({ course }: { course: Course }) {
         loading="lazy"
         width={1280}
         height={800}
-        className="aspect-[16/10] w-full object-cover"
+        className="aspect-[16/10] w-full bg-secondary object-contain p-2 sm:p-3"
       />
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex min-w-0 flex-1 flex-col p-5 sm:p-6">
         <span className="w-fit rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-primary">
           {course.category}
         </span>
-        <h3 className="mt-3 text-xl font-semibold text-foreground">{course.title}</h3>
+        <h3 className="mt-3 break-words text-xl font-semibold leading-snug text-foreground">{course.title}</h3>
         <StarRating rating={course.rating} className="mt-3" />
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
           {course.shortDescription}

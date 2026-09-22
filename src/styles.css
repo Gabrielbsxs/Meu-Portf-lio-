@@ -116,6 +116,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
   }
 
   h1,
@@ -128,6 +129,10 @@
   :focus-visible {
     outline: 2px solid var(--color-ring);
     outline-offset: 3px;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
