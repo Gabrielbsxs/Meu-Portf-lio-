@@ -39,7 +39,7 @@ function CourseDetail() {
       <SiteHeader />
 
       <main>
-        <section className="mx-auto max-w-6xl px-5 pt-10">
+        <section className="mx-auto max-w-6xl px-4 pt-7 sm:px-5 sm:pt-10">
           <Link
             to="/cursos"
             className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary"
@@ -49,21 +49,21 @@ function CourseDetail() {
           </Link>
         </section>
 
-        <section className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-10 lg:grid-cols-2 lg:py-14">
+        <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-8 sm:px-5 sm:py-10 lg:grid-cols-2 lg:gap-10 lg:py-14">
           <img
             src={course.image}
             alt={course.imageAlt}
             width={1280}
             height={800}
-            className="aspect-[16/10] w-full rounded-[2rem] object-cover shadow-lift"
+            className="aspect-[16/10] w-full rounded-2xl bg-secondary object-contain p-2 shadow-lift sm:rounded-[2rem] sm:p-3"
           />
-          <div>
+          <div className="min-w-0">
             <span className="rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-primary">
               {course.category}
             </span>
-            <h1 className="mt-4 text-4xl font-semibold text-foreground sm:text-5xl">{course.title}</h1>
+            <h1 className="mt-4 break-words text-3xl font-semibold leading-tight text-foreground sm:text-5xl">{course.title}</h1>
             <StarRating rating={course.rating} className="mt-4" />
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{course.fullDescription}</p>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">{course.fullDescription}</p>
 
             <dl className="mt-8 grid gap-3 sm:grid-cols-2">
               <Info icon={<Signal className="size-4" />} label="Nível" value={course.level} />
@@ -77,7 +77,7 @@ function CourseDetail() {
                 href={course.ctaHref}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground shadow-lift transition-transform hover:-translate-y-0.5"
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 text-center text-base font-semibold text-accent-foreground shadow-lift transition-transform hover:-translate-y-0.5 sm:w-auto"
               >
                 {course.ctaLabel}
               </a>
@@ -85,14 +85,14 @@ function CourseDetail() {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-6xl gap-7 px-5 py-8 lg:grid-cols-3">
+        <section className="mx-auto grid max-w-6xl gap-5 px-4 py-6 sm:px-5 sm:py-8 lg:grid-cols-3 lg:gap-7">
           <Block title="Benefícios" items={course.benefits} />
           <Block title="Conteúdos abordados" items={course.syllabus} ordered />
           <Block title="Para quem é" items={course.forWho} />
         </section>
 
         {course.details && (
-          <section className="mx-auto max-w-6xl px-5 py-8" aria-labelledby="detalhes-formacao">
+          <section className="mx-auto max-w-6xl px-4 py-6 sm:px-5 sm:py-8" aria-labelledby="detalhes-formacao">
             <h2 id="detalhes-formacao" className="text-2xl font-semibold text-foreground">Detalhes da formação</h2>
             <dl className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {course.details.map((detail) => (
@@ -102,18 +102,18 @@ function CourseDetail() {
           </section>
         )}
 
-        <section className="mx-auto max-w-6xl px-5 py-10">
-          <div className="surface-card flex flex-col items-center gap-5 p-10 text-center">
-            <h2 className="text-3xl font-semibold text-foreground">Conheça esta formação</h2>
+        <section className="mx-auto max-w-6xl px-4 py-8 sm:px-5 sm:py-10">
+          <div className="surface-card flex flex-col items-center gap-5 p-6 text-center sm:p-10">
+            <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">Conheça esta formação</h2>
             <p className="max-w-xl text-muted-foreground">
               Fale comigo e descubra se este curso é o passo certo para o seu momento.
             </p>
             {course.ctaHref ? (
-              <a href={course.ctaHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
+              <a href={course.ctaHref} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-center text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 sm:w-auto">
                 {course.ctaLabel}
               </a>
             ) : (
-              <Link to="/cursos" className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
+              <Link to="/cursos" className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-center text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 sm:w-auto">
                 Ver outros cursos
               </Link>
             )}
@@ -129,7 +129,7 @@ function CourseDetail() {
 function Block({ title, items, ordered }: { title: string; items: string[]; ordered?: boolean }) {
   const List = ordered ? "ol" : "ul";
   return (
-    <section className="surface-card p-7">
+    <section className="surface-card p-5 sm:p-7">
       <h2 className="text-xl font-semibold text-foreground">{title}</h2>
       <List className="mt-4 space-y-3">
         {items.map((item) => (

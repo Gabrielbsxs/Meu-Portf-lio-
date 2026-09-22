@@ -3,8 +3,8 @@ import { profile } from "@/data/profile";
 
 export function SiteFooter() {
   return (
-    <footer id="contato" className="mt-24 border-t border-border/70 bg-secondary/50">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <footer id="contato" className="mt-16 border-t border-border/70 bg-secondary/50 sm:mt-24">
+      <div className="mx-auto grid max-w-6xl gap-9 px-4 py-10 sm:grid-cols-2 sm:px-5 sm:py-14 lg:grid-cols-4">
         <div className="sm:col-span-2">
           <p className="font-display text-xl font-semibold text-primary">{profile.name}</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -37,7 +37,7 @@ export function SiteFooter() {
           <h2 className="text-sm font-semibold text-foreground">Contato</h2>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href={`mailto:${profile.email}`} className="hover:text-primary">
+              <a href={`mailto:${profile.email}`} className="break-all hover:text-primary">
                 {profile.email}
               </a>
             </li>
